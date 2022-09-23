@@ -41,12 +41,29 @@
         <section class="contenedorC2">
             <h2>Conáctenos</h2>
             <div class="formulario-div">
-                    <form  action="https://formsubmit.co/srjesusc@gmail.com" method="POST" class="formulario">	
+                    <form  action="https://formsubmit.co/srjesusc@gmail.com" method="POST" class="formulario" onsubmit="return validate()">	
 						<input type="text" placeholder="Nombre" name="name" maxlength="20" required>
+                        <label for="phone" id="tlf" name="telefono" ></label>
                         <input type="tel" placeholder="Telefono" name="phone"  maxlength="14"  required>
 						<input type="email" placeholder="Correo" name="email" maxlength="50" required>
-						<textarea  placeholder="Mensaje" name="message" maxlength="400"></textarea>
-						<input class="boton" type="submit" value="Enviar">
+						<textarea  placeholder="Mensaje" name="message" maxlength="400" required></textarea>
+                        <label for="textBox">Porfavor introduzca las letras de la imagen</label>
+
+                        <div class="center">
+
+                            <div id="captchaBackground">
+                            
+                                <canvas id="captcha">captcha text</canvas>
+                                <input id="textBox" type="text"  required>
+                                
+                                <span id="output"></span>
+                                
+                            </div>
+                            
+                        </div>
+
+
+						<input type="submit" id="submit_button" value="Enviar">
                         <input type="hidden" name="_next" value="http://suisjeprueba.ezyro.com/">
                         <input type="hidden" name="_captcha" value="false">
 					</form>
@@ -98,6 +115,6 @@
 
 </div>
 
-
+<script src="js/contactanos.js"></script>
 </body>
 </html>
